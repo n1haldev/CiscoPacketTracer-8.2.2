@@ -1,0 +1,19 @@
+# wget https://archive.org/download/cisco-packet-tracer-820-ubuntu-64bit/CiscoPacketTracer_820_Ubuntu_64bit.deb
+
+mkdir ~/PacketTracer8.2.0
+cp CiscoPacketTracer_820_Ubuntu_64bit.deb ~/PacketTracer8.2.0
+(cd ~/PacketTracer8.2.0; ar -xv CiscoPacketTracer_820_Ubuntu_64bit.deb; mkdir control data)
+(cd ~/PacketTracer8.2.0; tar -C control -Jxf control.tar.xz; tar -C data -Jxf data.tar.xz)
+(cd ~/PacketTracer8.2.0/data; sudo cp -r usr /; sudo cp -r opt /)
+
+sudo xdg-desktop-menu install /usr/share/applications/cisco-pt.desktop
+sudo xdg-desktop-menu install /usr/share/applications/cisco-ptsa.desktop
+sudo update-mime-database /usr/share/mime
+sudo gtk-update-icon-cache --force --ignore-theme-index /usr/share/icons/gnome
+sudo xdg-mime default cisco-ptsa.desktop x-scheme-handler/pttp
+sudo ln -sf /opt/pt/PacketTracer /usr/local/bin/PacketTracer
+
+sudo cp /opt/pt/packettracer /usr/bin
+
+echo "Installation of Cisco Packet Tracer is complete!"
+echo -e "\nRun the command:'packettracer' to open Cisco Packet Tracer"
