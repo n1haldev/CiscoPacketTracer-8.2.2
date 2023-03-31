@@ -1,4 +1,4 @@
-# wget https://archive.org/download/cisco-packet-tracer-820-ubuntu-64bit/CiscoPacketTracer_820_Ubuntu_64bit.deb
+wget https://archive.org/download/cisco-packet-tracer-820-ubuntu-64bit/CiscoPacketTracer_820_Ubuntu_64bit.deb
 
 mkdir ~/PacketTracer8.2.0
 cp CiscoPacketTracer_820_Ubuntu_64bit.deb ~/PacketTracer8.2.0
